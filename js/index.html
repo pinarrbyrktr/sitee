@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alışveriş Sitesi</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/all.css">
+    <!-- Font Awesome CDN bağlantısı -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <h2><a href="/">ANASAYFA</a></h2>
+            </div>
+            <ul class="nav_links">
+                <li><a href="#kozmetik">KOZMETİK</a></li>
+                <li><a href="#elektronik">ELEKTRONİK</a></li>
+                <li><a href="#ev-yasam">EV&YAŞAM</a></li>
+                <li><a href="#giyim">GİYİM</a></li>
+                <li class="sepet-li">
+                    <a href="#" onclick="sepetModalAc(event)">
+                        <i class="fas fa-shopping-cart"></i>
+                        SEPETİM
+                        <span class="sepet-badge" id="sepet-sayi">0</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section id="anasayfa">
+        <div class="inner_anasayfa">
+            <div class="child_anasayfa">
+                <h1>Hemen alışverişe başla <br> <span class="span_child"></span></h1>
+                <p>%50'ye varan indirimlerden faydalan!</p>
+                <button class="btn" onclick="scrollToProducts()">Göz at</button>
+            </div>
+            <div class="child_anasayfa">
+                <div class="slider-container">
+                    <img src="/img/site1.jpg" alt="Slider 1" class="slider-image active">
+                    <img src="/img/site2.jpg" alt="Slider 2" class="slider-image">
+                    <img src="/img/site3.jpg" alt="Slider 3" class="slider-image">
+                    <img src="/img/site4.png" alt="Slider 4" class="slider-image">
+                    <div class="slider-dots">
+                        <span class="dot active" onclick="showSlide(0)"></span>
+                        <span class="dot" onclick="showSlide(1)"></span>
+                        <span class="dot" onclick="showSlide(2)"></span>
+                        <span class="dot" onclick="showSlide(3)"></span>
+                    </div>
+                    <button class="slider-btn prev" onclick="changeSlide(-1)">❮</button>
+                    <button class="slider-btn next" onclick="changeSlide(1)">❯</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="kozmetik" class="kategori">
+        <div class="section_title">
+            <h2>KOZMETİK</h2>
+        </div>
+        <div class="innersoftware">
+            <!-- Miss Dior Ürünü -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/miss-dior.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/dior.webp" alt="Miss Dior">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>MISS DIOR PARFUM</h3>
+                    <p>₺6.300,00</p>
+                </a>
+            </div>
+
+            <!-- YSL Ürünü -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/ysl-loveshine.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/ruj.avif" alt="YSL Ruj">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>YSL LOVESHINE</h3>
+                    <p>₺1.960,00</p>
+                </a>
+            </div>
+
+            <!-- Shiseido Ürünü -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/shiseido-cream.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/s.jpg" alt="Shiseido Krem">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>SHISEIDO CREAM</h3>
+                    <p>₺2.440,00</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elektronik Kategori -->
+    <section id="elektronik" class="kategori">
+        <div class="section_title">
+            <h2>ELEKTRONİK</h2>
+        </div>
+        <div class="innersoftware">
+            <!-- iPhone Ürünü -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/iphone-15.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/15.webp" alt="iPhone 15">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>iPhone 15 Plus</<h3>
+                    <p>₺84.999,00</p>
+                </a>>
+            </div>
+
+            <!-- MacBook Ürünü -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/macbook-pro.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/mac.jpeg" alt="MacBook">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>MacBook Pro M2</h3>
+                    <p>₺92.999,00</p>
+                </a>
+            </div>
+
+            <!-- AirPods Ürünü -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/airpods.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/airpods.jpeg" alt="AirPods">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>AirPods Pro</h3>
+                    <p>₺7.899,00</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ev & Yaşam Kategori -->
+    <section id="ev-yasam" class="kategori">
+        <div class="section_title">
+            <h2>EV & YAŞAM</h2>
+        </div>
+        <div class="innersoftware">
+            <!-- Robot Süpürge -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/robot-supurge.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/robotsiyah.webp" alt="Robot Süpürge">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Robot Süpürge </h3>
+                    <p>₺12.999,00</p>
+                </a>
+            </div>
+
+            <!-- Kahve Makinesi -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/kahve-makinesi.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/kahve.jpg" alt="Kahve Makinesi">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Filtre Kahve Makinesi</h3>
+                    <p>₺3.499,00</p>
+                </a>
+            </div>
+
+            <!-- Blender Set -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/blender.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/blendersiyah.jpg" alt="Blender">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Blender Set Pro</h3>
+                    <p>₺2.899,00</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Giyim Kategori -->
+    <section id="giyim" class="kategori">
+        <div class="section_title">
+            <h2>GİYİM</h2>
+        </div>
+        <div class="innersoftware">
+            <!-- Ceket -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/deri-ceket.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/deri.webp" alt="Deri Ceket">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Deri Ceket</h3>
+                    <p>₺4.999,00</p>
+                </a>
+            </div>
+
+            <!-- Kot Pantolon -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/kot-pantolon.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/kot.webp" alt="Kot Pantolon">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Slim Fit Kot Pantolon</h3>
+                    <p>₺899,00</p>
+                </a>
+            </div>
+
+            <!-- Spor Ayakkabı -->
+            <div class="innersoftware_child">
+                <a href="/urun-detay/spor-ayakkabi.html" class="product-link">
+                    <div class="product-image">
+                        <img src="/img/ayakkabı.webp" alt="Spor Ayakkabı">
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-truck-fast"></i>
+                    </div>
+                    <h3>Spor Ayakkabı</h3>
+                    <p>₺2.199,00</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sepet Modal'ı güncelleme -->
+    <div id="sepetModal" class="sepet-modal">
+        <div class="sepet-icerik">
+            <span class="kapat">&times;</span>
+            <h2>Sepetim</h2>
+            <div id="sepet-urunler"></div>
+            <div class="sepet-toplam">
+                <h3>Toplam: <span id="sepet-toplam">0.00</span> ₺</h3>
+                <button class="sepeti-bosalt-btn" onclick="sepetiTemizle()">Sepeti Boşalt</button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+    .slider-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        height: 500px;
+        overflow: hidden;
+        border-radius: 10px;
+        margin: 0 auto;
+    }
+
+    .slider-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0;
+        transition: opacity 0.5s ease-in-out;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .slider-image.active {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .slider-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.3);
+        color: #333;
+        width: 45px;
+        height: 45px;
+        border: none;
+        cursor: pointer;
+        font-size: 22px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+        z-index: 2;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .slider-btn:hover {
+        background: rgba(255, 255, 255, 0.5);
+        width: 50px;
+        height: 50px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+
+    .prev {
+        left: 20px;
+    }
+
+    .next {
+        right: 20px;
+    }
+
+    .slider-dots {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+        z-index: 2;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 8px 15px;
+        border-radius: 20px;
+        backdrop-filter: blur(5px);
+    }
+
+    .dot {
+        width: 12px;
+        height: 12px;
+        background: rgba(255, 255, 255, 0.5);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .dot:hover {
+        background: rgba(255, 255, 255, 0.8);
+        transform: scale(1.1);
+    }
+
+    .dot.active {
+        background: white;
+        width: 15px;
+        height: 15px;
+        box-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    .inner_anasayfa {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .child_anasayfa {
+        flex: 1;
+        min-width: 0;
+    }
+
+    /* Sepet Modal Stilleri */
+    .sepet-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .sepet-icerik {
+        position: relative;
+        background: white;
+        margin: 5% auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .kapat {
+        position: absolute;
+        right: 20px;
+        top: 10px;
+        font-size: 28px;
+        cursor: pointer;
+        color: #666;
+        transition: color 0.3s;
+    }
+
+    .kapat:hover {
+        color: #000;
+    }
+
+    .sepet-urun {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        gap: 15px;
+    }
+
+    .sepet-urun img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .urun-detay {
+        flex: 1;
+    }
+
+    .urun-detay h4 {
+        margin: 0 0 5px 0;
+        color: #333;
+    }
+
+    .urun-detay p {
+        margin: 3px 0;
+        color: #666;
+        font-size: 14px;
+    }
+
+    .sil-btn {
+        background: #ff4444;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s;
+    }
+
+    .sil-btn:hover {
+        background: #cc0000;
+    }
+
+    .sepet-toplam {
+        text-align: right;
+        padding: 15px;
+        border-top: 1px solid #ddd;
+        background: #f9f9f9;
+        border-radius: 0 0 10px 10px;
+    }
+
+    .sepet-toplam h3 {
+        margin: 0;
+        color: #333;
+    }
+
+    .sepeti-bosalt-btn {
+        background: #ff4444;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        font-size: 14px;
+        transition: background 0.3s;
+    }
+
+    .sepeti-bosalt-btn:hover {
+        background: #cc0000;
+    }
+
+    #sepet-urunler {
+        max-height: 400px;
+        overflow-y: auto;
+        padding-right: 5px;
+    }
+
+    #sepet-urunler::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    #sepet-urunler::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+
+    #sepet-urunler::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+    }
+
+    #sepet-urunler::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    </style>
+
+    <script>
+    let sepet = JSON.parse(localStorage.getItem('sepet')) || [];
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slider-image');
+    const dots = document.querySelectorAll('.dot');
+
+    // Otomatik geçiş için timer
+    let slideTimer = setInterval(() => changeSlide(1), 5000);
+
+    function showSlide(n) {
+        // Timer'ı sıfırla
+        clearInterval(slideTimer);
+        slideTimer = setInterval(() => changeSlide(1), 5000);
+
+        // Aktif slide'ı kaldır
+        slides[currentSlide].classList.remove('active');
+        dots[currentSlide].classList.remove('active');
+
+        // Yeni slide'ı göster
+        currentSlide = n;
+        
+        // Slide sayısını kontrol et
+        if (currentSlide >= slides.length) currentSlide = 0;
+        if (currentSlide < 0) currentSlide = slides.length - 1;
+
+        // Yeni slide'ı aktif yap
+        slides[currentSlide].classList.add('active');
+        dots[currentSlide].classList.add('active');
+    }
+
+    function changeSlide(direction) {
+        showSlide(currentSlide + direction);
+    }
+
+    // Sayfa yüklendiğinde ilk slide'ı göster
+    window.onload = function() {
+        showSlide(0);
+        sepetSayiGuncelle(); // Mevcut sepet sayısını güncelle
+    }
+
+    function sepetModalAc(event) {
+        event.preventDefault();
+        const modal = document.getElementById("sepetModal");
+        sepetGuncelle();
+        if (modal) {
+            modal.style.display = "block";
+        }
+    }
+
+    function sepetSayiGuncelle() {
+        const sepetSayi = document.getElementById('sepet-sayi');
+        if (sepetSayi) {
+            sepetSayi.textContent = sepet.length;
+        }
+    }
+
+    function sepetGuncelle() {
+        const sepetContainer = document.getElementById('sepet-urunler');
+        sepetContainer.innerHTML = '';
+        let toplam = 0;
+
+        sepet.forEach((urun, index) => {
+            const urunHTML = `
+                <div class="sepet-urun">
+                    <img src="${urun.resim}" alt="${urun.ad}" width="100">
+                    <div class="urun-detay">
+                        <h4>${urun.ad}</h4>
+                        ${urun.hacim ? `<p>Hacim: ${urun.hacim}</p>` : ''}
+                        ${urun.kapasite ? `<p>Kapasite: ${urun.kapasite}</p>` : ''}
+                        ${urun.renk ? `<p>Renk: ${urun.renk}</p>` : ''}
+                        <p>Fiyat: ${urun.fiyat.toLocaleString('tr-TR')} ₺</p>
+                    </div>
+                    <button onclick="urunSil(${index})" class="sil-btn">Sil</button>
+                </div>
+            `;
+            sepetContainer.innerHTML += urunHTML;
+            toplam += urun.fiyat;
+        });
+
+        document.getElementById('sepet-toplam').textContent = toplam.toLocaleString('tr-TR');
+    }
+
+    function urunSil(index) {
+        sepet.splice(index, 1);
+        localStorage.setItem('sepet', JSON.stringify(sepet));
+        sepetGuncelle();
+        sepetSayiGuncelle();
+    }
+
+    function sepetiTemizle() {
+        if (confirm('Sepetinizdeki tüm ürünleri silmek istediğinize emin misiniz?')) {
+            sepet = [];
+            localStorage.setItem('sepet', JSON.stringify(sepet));
+            sepetGuncelle();
+            sepetSayiGuncelle();
+        }
+    }
+
+    // Modal kapatma işlemleri
+    const modal = document.getElementById("sepetModal");
+    const span = document.getElementsByClassName("kapat")[0];
+
+    if (span) {
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Navbar görünürlük kontrolü için script
+    let lastScrollPosition = 0;
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        const currentScrollPosition = window.pageYOffset;
+        
+        // Yukarı kaydırma
+        if (currentScrollPosition < lastScrollPosition) {
+            navbar.classList.add('visible');
+        }
+        // Aşağı kaydırma
+        else {
+            navbar.classList.remove('visible');
+        }
+        
+        lastScrollPosition = currentScrollPosition;
+        
+        // En üstte navbar'ı göster
+        if (currentScrollPosition < 50) {
+            navbar.classList.add('visible');
+        }
+    });
+
+    function scrollToProducts() {
+        // Kozmetik bölümüne yumuşak geçiş yap
+        document.getElementById('kozmetik').scrollIntoView({ 
+            behavior: 'smooth'
+        });
+    }
+    </script>
+
+</body>
+</html> 

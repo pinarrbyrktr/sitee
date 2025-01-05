@@ -1,0 +1,1167 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+/* Navbar Stilleri */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.visible {
+    transform: translateY(0);
+}
+
+.nav_links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav_links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav_links a:hover {
+    color: #000;
+}
+
+/* Ürün Kartı Stilleri */
+.product-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.product-link:hover {
+    transform: scale(1.05);
+}
+
+.innersoftware {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 30px;
+}
+
+.innersoftware_child {
+    background: #f894e0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.innersoftware_child h3 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    color: #ffffff;
+}
+
+.innersoftware_child p {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+/* Ürün Detay Sayfası Stilleri */
+.urun-detay {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.urun-container {
+    display: flex;
+    gap: 50px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.urun-resim {
+    flex: 1;
+}
+
+.urun-resim img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.urun-bilgi {
+    flex: 1;
+    padding: 20px;
+}
+
+.fiyat {
+    font-size: 1.8em;
+    color: #2c3e50;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+.satin-al-btn {
+    background: #2c3e50;
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.satin-al-btn:hover {
+    background: #34495e;
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 768px) {
+    .urun-container {
+        flex-direction: column;
+    }
+    
+    .navbar {
+        padding: 20px;
+    }
+    
+    .nav_links {
+        gap: 15px;
+    }
+}
+
+/* Renk seçimi butonları */
+.renk-options {
+    display: flex;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.renk-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.renk-btn.active {
+    border: 2px solid #000;
+    transform: scale(1.1);
+}
+
+.renk-btn.titanium {
+    background-color: #E3D0C3;
+}
+
+.renk-btn.siyah {
+    background-color: #000000;
+}
+
+.renk-btn.mavi {
+    background-color: #0066CC;
+}
+
+.kapasite-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.kapasite-btn.active {
+    background-color: #000;
+    color: #ffc0cb;
+    border-color: #000;
+}
+
+.kapasite-options, .renk-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+/* Kapasite seçimi butonları */
+.kapasite-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0 30px 0;
+}
+
+.kapasite-btn {
+    padding: 10px 20px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.kapasite-btn:hover, 
+.kapasite-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Ürün galerisi için stil */
+.urun-galeri {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.galeri-thumb {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.galeri-thumb:hover {
+    border-color: #2c3e50;
+}
+
+/* Mobil uyumluluk için ek stiller */
+@media (max-width: 768px) {
+    .kapasite-options {
+        flex-wrap: wrap;
+    }
+    
+    .renk-options {
+        justify-content: center;
+    }
+    
+    .urun-galeri {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Ürün özellikleri tablosu */
+.urun-ozellikleri table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+.urun-ozellikleri th,
+.urun-ozellikleri td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.urun-ozellikleri th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    width: 30%;
+}
+
+/* Stok durumu göstergesi */
+.stok-durumu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 15px 0;
+    color: #27ae60;
+}
+
+.stok-durumu.az {
+    color: #e67e22;
+}
+
+.stok-durumu.yok {
+    color: #e74c3c;
+}
+
+/* Taksit seçenekleri */
+.taksit-secenekleri {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.taksit-secenekleri h3 {
+    margin-bottom: 10px;
+}
+
+.taksit-tablo {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.taksit-tablo td {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* MacBook renk seçenekleri */
+.renk-btn.uzay-grisi {
+    background-color: #2B2B2B;
+}
+
+.renk-btn.gumus {
+    background-color: #E3E3E3;
+}
+
+/* RAM seçimi butonları */
+.ram-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.ram-btn {
+    padding: 10px 20px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ram-btn:hover,
+.ram-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Özellik listesi */
+.ozellik-listesi {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.ozellik-listesi li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.ozellik-listesi i {
+    color: #27ae60;
+}
+
+/* Garanti bilgisi */
+.garanti-bilgisi {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #2c3e50;
+}
+
+.garanti-bilgisi i {
+    color: #3498db;
+    font-size: 1.2em;
+}
+
+/* Ana sayfa banner bölümü */
+#anasayfa {
+    background-color: #f0f0f0;
+    padding: 50px 20px;
+}
+
+.inner_anasayfa {
+    background: linear-gradient(135deg, #FF69B4, #9370DB);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.child_anasayfa {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Sol taraftaki metin içeriği */
+.child_anasayfa h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.child_anasayfa p {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+.btn {
+    padding: 15px 40px;
+    background: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #34495e;
+}
+
+/* Sağ taraftaki resim */
+.child_anasayfa img {
+    width: 100%;
+    max-width: 500px; /* Maksimum genişlik */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 768px) {
+    .inner_anasayfa {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .child_anasayfa h1 {
+        font-size: 2em;
+    }
+
+    .child_anasayfa img {
+        max-width: 100%;
+    }
+}
+
+/* Kategori başlıkları */
+.section_title h2 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Ruj renk seçenekleri */
+.ruj-renkleri {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.ruj-renk {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ruj-renk.active {
+    border: 2px solid #000;
+    transform: scale(1.1);
+}
+
+.ruj-renk.kirmizi {
+    background-color: #FF0000;
+}
+
+.ruj-renk.pembe {
+    background-color: #FF69B4;
+}
+
+.ruj-renk.nude {
+    background-color: #DEB887;
+}
+
+/* Hacim seçimi */
+.hacim-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.hacim-btn {
+    padding: 10px 20px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.hacim-btn.active {
+    background-color: #000;
+    color: #fff;
+    border-color: #000;
+}
+
+.hacim-options {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.urun-detay-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    gap: 50px;
+}
+
+.urun-resim {
+    flex: 1;
+}
+
+.urun-resim img {
+    width: 100%;
+    height: auto;
+}
+
+.urun-bilgi {
+    flex: 1;
+}
+
+.urun-bilgi h1 {
+    margin-bottom: 20px;
+}
+
+.fiyat {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Giyim ürünleri için beden seçimi */
+.beden-secimi {
+    margin: 20px 0;
+}
+
+.beden-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.beden-btn {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.beden-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Ayakkabı numarası seçimi */
+.numara-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.numara-btn {
+    padding: 8px 15px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.numara-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Elektronik ürün özellikleri */
+.ozellik-listesi {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.ozellik-listesi li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+    color: #2c3e50;
+    font-size: 1.1em;
+}
+
+.ozellik-listesi i {
+    color: #27ae60;
+}
+
+/* Garanti bilgisi kutusu */
+.garanti-bilgisi {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    color: #2c3e50;
+}
+
+.garanti-bilgisi i {
+    color: #3498db;
+    font-size: 1.2em;
+}
+
+/* Kahve makinesi renk seçenekleri */
+.renk-btn.kirmizi {
+    background-color: #e74c3c;
+}
+
+.renk-btn.siyah {
+    background-color: #2c3e50;
+}
+
+.renk-btn.gumus {
+    background-color: #bdc3c7;
+}
+
+.renk-btn.active {
+    border: 2px solid #2c3e50;
+}
+
+/* Blender ve Ceket sayfaları için ek stiller */
+.set-icerigi {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+/* Beden seçimi butonları */
+.beden-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.beden-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.beden-btn:hover,
+.beden-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Beden tablosu butonu */
+.beden-tablo-btn {
+    padding: 10px 20px;
+    background: transparent;
+    border: 1px solid #2c3e50;
+    color: #2c3e50;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 15px 0;
+    transition: all 0.3s ease;
+}
+
+.beden-tablo-btn:hover {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Renk seçenekleri */
+.renk-btn.beyaz {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+}
+
+.renk-btn.kahve {
+    background-color: #795548;
+}
+
+/* Ürün detayları */
+.urun-detaylari {
+    margin: 20px 0;
+}
+
+.urun-detaylari h3 {
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+/* Mobil uyumluluk için ek stiller */
+@media (max-width: 768px) {
+    .beden-options {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .set-icerigi {
+        padding: 10px;
+    }
+}
+
+/* Kot pantolon ve ayakkabı için ek stiller */
+
+/* Boy seçimi butonları */
+.boy-options {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.boy-btn {
+    padding: 8px 20px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boy-btn:hover,
+.boy-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Numara seçimi butonları */
+.numara-options {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.numara-btn {
+    width: 45px;
+    height: 45px;
+    border: 2px solid #2c3e50;
+    background: white;
+    color: #2c3e50;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.numara-btn:hover,
+.numara-btn.active {
+    background: #2c3e50;
+    color: white;
+}
+
+/* Renk seçenekleri */
+.renk-btn.mavi {
+    background-color: #3498db;
+}
+
+.renk-btn.lacivert {
+    background-color: #2c3e50;
+}
+
+.renk-btn.gri {
+    background-color: #95a5a6;
+}
+
+/* Mobil uyumluluk için ek stiller */
+@media (max-width: 768px) {
+    .numara-options,
+    .boy-options {
+        justify-content: center;
+    }
+    
+    .numara-btn,
+    .boy-btn {
+        margin: 5px;
+    }
+}
+
+.sepet-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    overflow-y: auto;
+}
+
+.sepet-icerik {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+}
+
+#sepet-urunler {
+    overflow-y: auto;
+    max-height: 60vh;
+    padding-right: 10px;
+}
+
+.sepet-toplam {
+    position: sticky;
+    bottom: 0;
+    background-color: #fefefe;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    margin-top: auto;
+}
+
+/* Kaydırma çubuğu stilleri */
+#sepet-urunler::-webkit-scrollbar {
+    width: 8px;
+}
+
+#sepet-urunler::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+#sepet-urunler::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#sepet-urunler::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.sepet-urun {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+    background-color: #fff;
+}
+
+.urun-detay {
+    flex: 1;
+}
+
+.sil-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.sil-btn:hover {
+    background-color: #cc0000;
+}
+
+.kapat {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.kapat:hover {
+    color: black;
+}
+
+.sepet-urun {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    gap: 20px;
+}
+
+.urun-detay {
+    flex: 1;
+}
+
+.sil-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.sepete-ekle-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.sepete-ekle-btn:hover {
+    background-color: #45a049;
+}
+
+.sepet-li {
+    position: relative;
+}
+
+.sepet-li a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.sepet-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff4444;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+    min-width: 15px;
+    text-align: center;
+}
+
+.fa-shopping-cart {
+    font-size: 18px;
+}
+
+.renk-btn.pembe {
+    background-color: #ffc0cb;
+}
+
+.renk-btn.sari {
+    background-color: #ffd700;
+}
+
+.renk-btn.mavi {
+    background-color: #0066CC;
+}
+
+/* Seçili durum için genel stil */
+.renk-btn.active {
+    border: 2px solid #000;
+    transform: scale(1.1);
+}
+
+.sepeti-bosalt-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.sepeti-bosalt-btn:hover {
+    background-color: #cc0000;
+}
+
+.sepet-toplam {
+    text-align: right;
+    padding: 15px;
+    border-top: 1px solid #ddd;
+    background: #f9f9f9;
+}
+
+/* Kozmetik kategorisi için */
+#kozmetik.kategori {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Açık pembe */
+}
+
+/* Elektronik kategorisi için */
+#elektronik.kategori {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Açık mavi */
+}
+
+/* Ev & Yaşam kategorisi için */
+#ev-yasam.kategori {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Açık yeşil */
+}
+
+/* Giyim kategorisi için */
+#giyim.kategori {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37); /* Açık turuncu */
+}
+
+/* Tüm kategoriler için ortak padding ve margin */
+.kategori {
+    padding: 40px 0;
+    margin: 20px 0;
+}
+/* Varsayılan ürün kartı stili */
+.innersoftware_child {
+    background: #f894e0; /* Mevcut pembe renk */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  
+}
+
+/* Kategorilere göre özel arka plan renkleri */
+#kozmetik .innersoftware_child {
+    background:linear-gradient(135deg, #FF69B4, #9370DB); /* Kozmetik ürünleri için açık pembe */
+}
+
+#elektronik .innersoftware_child {
+    background: linear-gradient(135deg, #FF69B4, #9370DB); /* Elektronik ürünleri için açık mavi */
+}
+
+#ev-yasam .innersoftware_child {
+    background:linear-gradient(135deg, #FF69B4, #9370DB); /* Ev & Yaşam ürünleri için açık yeşil */
+}
+
+#giyim .innersoftware_child {
+    background: linear-gradient(135deg, #FF69B4, #9370DB); /* Giyim ürünleri için açık turuncu */
+}
+
+/* Blender renk butonları için özel stiller */
+.renk-btn.rose-gold {
+    background-color: #B76E79; /* Rose Gold rengi */
+    border: 2px solid #ddd;
+}
+
+.renk-btn.rose-gold.active {
+    border-color: #000;
+    transform: scale(1.1);
+}
+
+/* Blender renk butonları için özel stiller */
+.renk-btn.kirmizi {
+    background-color: #FF0000; /* Kırmızı renk */
+    border: 2px solid #ddd;
+}
+
+.renk-btn.kirmizi.active {
+    border-color: #000;
+    transform: scale(1.1);
+}
+
+/* Siyah/Beyaz renk butonu için özel stil */
+.renk-btn.siyah-beyaz {
+    background: linear-gradient(45deg, #000 50%, #fff 50%);
+    border: 2px solid #ddd;
+}
+
+.renk-btn.siyah-beyaz.active {
+    border-color: #000;
+    transform: scale(1.1);
+}
+
+/* Sayfanın üst kısmında boşluk bırakmak için */
+body {
+    padding-top: 80px;
+}
